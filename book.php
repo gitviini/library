@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Jaqueira</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="shortcut icon" href="./bookiconpixel.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./livro.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 </head>
 <body>

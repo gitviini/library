@@ -89,6 +89,7 @@ main{
     height: 100%;
     gap: 20px;
 }
+
 section, div{
     display: flex;
     width: 100%;
@@ -151,7 +152,6 @@ section, div{
         flex-flow: row wrap;
         gap: 30px;
     }
-
     .book{
         display:flex;
         width:120px;
@@ -162,16 +162,14 @@ section, div{
         background: rgb(120,14,
       32);
         cursor: pointer;
-      }
-      
-      .book img{
+    }
+    .book img{
         position: relative;
         width: 102.5px;
         height: 160px;
         transform: translateX(17.5px);
-      }
-      
-      .book:after, .book:before{
+    }
+    .book:after, .book:before{
         position: absolute;
         content:'';
         display: block;
@@ -181,18 +179,16 @@ section, div{
         border-radius: 20px 0 0 20px;
         transform: translateY(170px) translateX(10px);
         z-index:2;
-      }
-      
-      .book:before{
+    }
+    .book:before{
         width:120px;
         height: 40px;
         transform: translateY(160px) translateX(0px);
         border-radius: 20px 0 10px 20px;
         z-index:1;
         background: rgba(0,0,0,0.4);
-      }
-      
-      .mark{
+    }
+    .mark{
         position: absolute;
         width: 25px;
         height: 50px;
@@ -200,5 +196,5 @@ section, div{
         z-index: 3;
         clip-path: path("M 0 0 L 0 50 L 12.5 40 L 25 50 L 50 0 L 0 0 Z");
         transform: translateX(80px) translateY(175px);
-      }
+    }
 }
