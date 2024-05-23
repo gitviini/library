@@ -1,10 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Danfo&family=Pixelify+Sans:wght@400..700&family=Poetsen+One&display=swap");
+::-webkit-scrollbar {
+  background-color: rgba(154, 220, 255, 0.2);
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 63, 97, 0.2);
+}
+
+::-moz-placeholder {
+  color: #789;
+}
+
+::placeholder {
+  color: #789;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #456;
+  color: #123;
   --yellow: #FFF89A;
   --blue: #9ADCFF;
   --shadow: #345;
@@ -27,7 +43,7 @@ body {
 header {
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 4;
   max-width: 1000px;
   background-color: #fff;
 }
@@ -53,7 +69,6 @@ header ul * {
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  font-family: "Pixelify Sans";
   font-size: 20px;
 }
 header ul #logo {
@@ -67,35 +82,14 @@ header ul #logo img {
 }
 
 main {
-  display: block;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   max-width: 1000px;
   height: 100%;
-}
-main a {
-  align-self: flex-start;
-}
-main button {
-  background-color: var(--blue);
-  align-self: flex-start;
-  padding: 10px;
-  border: 2px solid var(--shadow);
-  border-bottom: 12px solid var(--shadow);
-  border-right: 12px solid var(--shadow);
-  font-family: "Pixelify Sans";
-  font-size: 18px;
-  transition: 0.05s;
-  text-decoration: none;
-  cursor: pointer;
-}
-main button:hover {
-  background-color: #5a9cc0;
-  color: #fff;
-}
-main button:active {
-  margin: 8px 0 0 8px;
-  border-bottom: 2px solid var(--shadow);
-  border-right: 2px solid var(--shadow);
+  gap: 20px;
 }
 
 section, div {
@@ -120,103 +114,89 @@ section, div {
 }
 #about #description h2 {
   font-size: 4vw;
-  font-family: "Pixelify Sans";
   font-weight: bolder;
 }
 
+#search_bar_container {
+  width: 100%;
+  padding: 0 20px;
+  height: auto;
+}
+#search_bar_container #search_bar {
+  height: auto;
+}
+
 #form {
+  height: auto;
+  display: flex;
+  width: 100%;
   padding: 0 20px;
   flex-flow: column;
-  height: auto;
-  justify-content: flex-start;
-}
-#form span {
-  position: relative;
-  font-family: "Pixelify Sans";
-  font-size: 20px;
-  font-weight: 500;
-  margin: 10px;
+  justify-content: center;
+  align-items: flex-start;
 }
 #form form {
-  display: flex;
-  flex-flow: column;
   height: 0;
   overflow: hidden;
-  gap: 10px;
 }
 #form form.click {
   height: auto;
 }
-#form input[type=text], #form label {
-  border: 2px solid var(--shadow);
-  border-bottom: 10px solid var(--shadow);
-  padding: 13.5px;
-  outline: none;
-  width: 100%;
-  justify-self: flex-start;
-  align-self: flex-start;
-  color: #123;
-  cursor: pointer;
-}
-#form input[type=text]:focus, #form label:active {
-  margin: 8px 0 0 0;
-  border: 2px solid var(--shadow);
-  border-bottom: 2px solid var(--shadow);
-}
-#form input[type=file] {
-  display: none;
-}
-#form label {
-  color: #789;
-}
 
 #books_container {
-  padding: 0 20px;
   flex-flow: column;
-  padding: 10px 20px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 20px;
+  gap: 20px;
 }
 #books_container #books {
   display: flex;
   flex-flow: row wrap;
-  gap: 20px;
+  gap: 30px;
 }
 #books_container .book {
-  flex-flow: column;
-  max-height: 230px;
-  width: auto;
+  display: flex;
+  width: 120px;
+  min-height: 200px;
+  height: 200px;
+  border-radius: 20px 10px 10px 20px;
+  overflow: hidden;
+  background: rgb(120, 14, 32);
   cursor: pointer;
 }
 #books_container .book img {
-  height: 80%;
-  width: auto;
-  outline: 2px solid var(--shadow);
-  border-right: 10px solid #fff;
+  position: relative;
+  width: 102.5px;
+  height: 160px;
+  transform: translateX(17.5px);
 }
-#books_container .book p {
+#books_container .book:after, #books_container .book:before {
+  position: absolute;
+  content: "";
   display: block;
-  width: 100%;
-  padding: 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  width: 110px;
+  height: 20px;
+  background: linear-gradient(to bottom, #aaa, #fff);
+  border-radius: 20px 0 0 20px;
+  transform: translateY(170px) translateX(10px);
+  z-index: 2;
 }
-h2 {
-  font-family: "Pixelify Sans";
+#books_container .book:before {
+  width: 120px;
+  height: 40px;
+  transform: translateY(160px) translateX(0px);
+  border-radius: 20px 0 10px 20px;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
 }
-
-::-webkit-scrollbar {
-  background-color: rgba(154, 220, 255, 0.2);
-  width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 63, 97, 0.2);
-}
-
-::-moz-placeholder {
-  color: #789;
-}
-
-::placeholder {
-  color: #789;
+#books_container .mark {
+  position: absolute;
+  width: 25px;
+  height: 50px;
+  background-color: green;
+  z-index: 3;
+  -webkit-clip-path: path("M 0 0 L 0 50 L 12.5 40 L 25 50 L 50 0 L 0 0 Z");
+          clip-path: path("M 0 0 L 0 50 L 12.5 40 L 25 50 L 50 0 L 0 0 Z");
+  transform: translateX(80px) translateY(175px);
 }/*# sourceMappingURL=style.css.map */
